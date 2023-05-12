@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 contract Voting {
     using SafeMath for uint256;
 
-    // Model a Candidate
     struct Candidate {
         uint256 id;
         string name;
@@ -17,7 +16,6 @@ contract Voting {
     mapping(address => bool) public voters;
 
     // Store Candidates
-    // Fetch Candidates
     mapping(uint256 => Candidate) public candidates;
     // Store Candidates Count
     uint256 public candidatesCount;
@@ -25,14 +23,14 @@ contract Voting {
     // voted event
     event votedEvent(uint256 indexed _candidateId);
 
-    // Constructor
+    // Candidate Constructor
     constructor() {
         addCandidate("Aashish");
         addCandidate("Person 2");
         addCandidate("This guy");
     }
 
-    // Add Candidate
+    // Add Candidate (Don't really need this)
     function addCandidate(string memory _name) private {
         candidatesCount = candidatesCount.add(1);
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
