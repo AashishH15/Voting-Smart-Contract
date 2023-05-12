@@ -30,7 +30,7 @@ contract Voting {
         addCandidate("This guy");
     }
 
-    // Add Candidate (Don't really need this)
+    // Add Candidate
     function addCandidate(string memory _name) private {
         candidatesCount = candidatesCount.add(1);
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
